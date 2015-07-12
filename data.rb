@@ -1,12 +1,15 @@
 require "nokogiri"
 require "open-uri"
+require "sinatra"
 
-url = "http://www.reddit.com/"
-data = Nokogiri::HTML(open(url))
-@entries = data.css('.title.may-blank')
+get '/' do
 
-@entries.each do |entry|
+	url = "http://www.reddit.com/"
+	data = Nokogiri::HTML(open(url))
+	@entries = data.css('.title.may-blank')
 
-	entry.at_css('.title').text
+	@entries.each do |entry|
+		entry.at_css('.title').text
+	end
 
 end
