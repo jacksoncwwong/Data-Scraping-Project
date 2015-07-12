@@ -7,6 +7,6 @@ data = Nokogiri::HTML(open(url))
 
 @entries.each do |entry|
 
-entry.at_css('.title').text
+	entry.at_css('.title').text
 
 end
