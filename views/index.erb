@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<h1>Testing testing</h1>
+		<div class="span8">
+		<table class="table table-striped">
+		<tbody>
+		<% @entry.each do | item | %>
+			<tr>
+			<% title = item.at_css('.title') %>
+			<% score = item.at_css('.score.unvoted') %>
+			<% if !title.nil? && !score.nil?%>
+				<td class="score"><%= score.text %></td>
+				<td class="title"><%= title.text %></td>
+			<% end %>
+			</tr>
+		<% end %>
+		</tbody>
+		</table>
+	</div>
+
+
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</body>
+
+</html>
