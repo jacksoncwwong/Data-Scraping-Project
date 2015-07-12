@@ -16,7 +16,7 @@
 			<% score = item.at_css('.score.unvoted') %>
 			<% if !title.nil? && !score.nil?%>
 				<td class="score"><%= score.text %></td>
-				<td class="title"><%= title.text %></td>
+				<td class="title"><a href="<%= title.at_css('.may-blank')[:href] %>"><%= title.text %></a></td>
 			<% end %>
 			</tr>
 		<% end %>
